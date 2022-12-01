@@ -14,29 +14,15 @@ import factory.TipoNotificadorFactory;
  */
 public class DecoradorSMS extends DecoradorNotificacionBase{
 
-    
-    
-   
+    public DecoradorSMS(INotificacion decoracion) {
 
-   public  DecoradorSMS(INotificacion decoracion)
-   {
-       
-       super(decoracion);
-       
-    
-   }
+        super(decoracion);
+
+    }
 
     @Override
-    public void notificar(Mensaje mensaje) {
-        
-       
-       super.notificar(mensaje);
-        
-        
-      
-       TipoNotificadorFactory.crearNotificadorTwilio().notificar(mensaje);
+    public Mensaje notificar(Mensaje mensaje) {
+        TipoNotificadorFactory.crearNotificadorTwilio().notificar(mensaje);
+        return super.notificar(mensaje);
     }
-   
-    
-   
 }

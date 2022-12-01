@@ -12,5 +12,5 @@ import dominio.Mensaje;
  * @author Jarol
  */
 public interface INotificaciones {
-        public void enviarNotificacion(Mensaje mensaje);
+    public Mensaje enviarNotificacion(Mensaje mensaje);
 }

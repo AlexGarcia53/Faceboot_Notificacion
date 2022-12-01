@@ -26,9 +26,9 @@ public class DecoradorEmail extends DecoradorNotificacionBase{
   
     
     @Override
-    public void notificar(Mensaje mensaje) {
-        super.notificar(mensaje);
+    public Mensaje notificar(Mensaje mensaje) {
        TipoNotificadorFactory.crearNotificadorSimpleJavaMail().notificar(mensaje);
+       return super.notificar(mensaje);
     }
 
    

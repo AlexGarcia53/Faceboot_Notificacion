@@ -4,36 +4,40 @@
  */
 package notificacionesDecorator;
 
+import com.mycompany.logicafaceboot.FabricaLogica;
 import dominio.Mensaje;
-import dominio.Usuario;
-import javax.swing.JOptionPane;
+import excepciones.ErrorEnviarMensajeException;
+import interfaces.ILogica;
 
 /**
  *
  * @author Jarol
  */
 public class NotificacionBase implements INotificacion {
-  private static NotificacionBase notificacionBase=null;
+    private static NotificacionBase notificacionBase = null;
+    private ILogica logica;
+
     public NotificacionBase() {
+        this.logica= FabricaLogica.crearLogica();
     }
-     
- public  static INotificacion crearNotificacionBase()
- {
-     synchronized(NotificacionBase.class)
-     {
-   if(notificacionBase==null)
-   {
-         notificacionBase= new NotificacionBase();
-   }
-        
-     }
-     return notificacionBase;   
- }
-    
- 
+
+    public static INotificacion crearNotificacionBase() {
+        synchronized (NotificacionBase.class) {
+            if (notificacionBase == null) {
+                notificacionBase = new NotificacionBase();
+            }
+
+        }
+        return notificacionBase;
+    }
+
     @Override
-    public void notificar(Mensaje mensaje) {
-        
+    public Mensaje notificar(Mensaje mensaje) {
+        try{
+            return this.logica.enviarNotificacion(mensaje);
+        } catch (ErrorEnviarMensajeException e){
+            throw new ErrorEnviarMensajeException(e.getMessage());
+        }
     }
     
 }

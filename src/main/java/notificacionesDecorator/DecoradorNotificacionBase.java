@@ -13,30 +13,20 @@ import dominio.Usuario;
  * @author Jarol
  */
 public abstract class DecoradorNotificacionBase implements INotificacion{
-private final INotificacion decoracion;
+    private final INotificacion decoracion;
 
-   
-
-public  DecoradorNotificacionBase(INotificacion decoracion)
-    {  
+    public DecoradorNotificacionBase(INotificacion decoracion) {
         this.decoracion = decoracion;
-        
+
     }
 
-public  DecoradorNotificacionBase()
-    {  
-    this.decoracion = null;
-      
-        
+    public DecoradorNotificacionBase() {
+        this.decoracion = null;
+
     }
 
-
- 
     @Override
-    public void notificar(Mensaje mensaje) {
-     
-        decoracion.notificar(mensaje);
+    public Mensaje notificar(Mensaje mensaje) {
+        return decoracion.notificar(mensaje);
     }
-    
-   
 }

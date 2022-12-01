@@ -13,5 +13,5 @@ import dominio.Mensaje;
  */
 public interface INotificacion {
     //El usuario agregado es el receptor
-    public void notificar(Mensaje mensaje);
+    public Mensaje notificar(Mensaje mensaje);
 }

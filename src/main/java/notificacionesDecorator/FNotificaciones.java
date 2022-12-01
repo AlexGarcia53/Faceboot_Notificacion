@@ -13,34 +13,26 @@ import dominio.Mensaje;
  */
 public class FNotificaciones implements INotificaciones{
     
- private INotificacion notificacionCorreo,notificacionMensaje,notificacionNormal;
+    private INotificacion notificacionCorreo, notificacionMensaje, notificacionNormal;
 
 
     public FNotificaciones() {
-      
-          notificacionNormal=NotificacionBase.crearNotificacionBase();
+        notificacionNormal=NotificacionBase.crearNotificacionBase();
     }
  
 
     @Override
-    public void enviarNotificacion(Mensaje mensaje) {
-        if(mensaje.getEnvioSms()==true&&mensaje.getEnvioCorreo()==false)
-        {
-           
-          notificacionMensaje= new DecoradorSMS(notificacionNormal);
-            notificacionMensaje.notificar(mensaje);
-        }else if(mensaje.getEnvioSms()==false&&mensaje.getEnvioCorreo()==true)
-        {
-            notificacionCorreo=new DecoradorEmail(notificacionNormal);
-            notificacionCorreo.notificar(mensaje);
-        }else if(mensaje.getEnvioSms()==true&&mensaje.getEnvioCorreo()==true)
-        { 
-            notificacionCorreo= new DecoradorEmail(notificacionNormal);
-            notificacionMensaje= new DecoradorSMS(notificacionCorreo);
-            notificacionMensaje.notificar(mensaje);
+    public Mensaje enviarNotificacion(Mensaje mensaje) {
+        if (mensaje.getMensajeSMS() == true && mensaje.getMensajeEmail() == false) {
+            notificacionMensaje = new DecoradorSMS(notificacionNormal);
+            return notificacionMensaje.notificar(mensaje);
+        } else if (mensaje.getMensajeSMS() == false && mensaje.getMensajeEmail() == true) {
+            notificacionCorreo = new DecoradorEmail(notificacionNormal);
+            return notificacionCorreo.notificar(mensaje);
+        } else {
+            notificacionCorreo = new DecoradorEmail(notificacionNormal);
+            notificacionMensaje = new DecoradorSMS(notificacionCorreo);
+            return notificacionMensaje.notificar(mensaje);
         }
-        
-       
-    }
-    
+    } 
 }
