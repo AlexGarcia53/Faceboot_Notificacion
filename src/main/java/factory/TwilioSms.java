@@ -29,7 +29,7 @@ public class TwilioSms implements INotificador  {
                 new com.twilio.type.PhoneNumber("+52" + mensaje.getReceptor().getCelular()),
                 // Numero del telefoo que proporciona TwilioSms
                 new com.twilio.type.PhoneNumber(numeroEmisor),
-                "Enviado por:" + mensaje.getUsuario().getUsuario() + "   \n" + mensaje.getTextoPlano())
+                "Nuevo mensaje desde Faceboot \n"+"Enviado por: " + mensaje.getUsuario().getUsuario() + "   \n" + mensaje.getTextoPlano())
                 .create();
 
     }
