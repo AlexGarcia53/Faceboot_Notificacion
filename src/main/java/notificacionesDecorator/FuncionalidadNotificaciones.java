@@ -11,12 +11,12 @@ import dominio.Mensaje;
  *
  * @author Jarol
  */
-public class FNotificaciones implements INotificaciones{
+public class FuncionalidadNotificaciones implements INotificaciones{
     
     private INotificacion notificacionCorreo, notificacionMensaje, notificacionNormal;
 
 
-    public FNotificaciones() {
+    public FuncionalidadNotificaciones() {
         notificacionNormal=NotificacionBase.crearNotificacionBase();
     }
  

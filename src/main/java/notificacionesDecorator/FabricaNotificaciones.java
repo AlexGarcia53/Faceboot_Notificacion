@@ -23,6 +23,6 @@ public class FabricaNotificaciones {
     }
     
     public INotificaciones obtenerNotificaciones(){
-        return new FNotificaciones();
+        return new FuncionalidadNotificaciones();
     }
 }
