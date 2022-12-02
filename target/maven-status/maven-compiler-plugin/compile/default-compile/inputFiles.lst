@@ -1,11 +1,11 @@
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\factory\INotificador.java
-C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\FNotificaciones.java
+C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\FabricaNotificaciones.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\DecoradorNotificacionBase.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\DecoradorSMS.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\INotificaciones.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\factory\TwilioSms.java
-C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\PRUEBA.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\factory\SimpleJavaMail.java
+C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\FuncionalidadNotificaciones.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\INotificacion.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\factory\TipoNotificadorFactory.java
 C:\Users\Admin\Documents\GitHub\Faceboot_Notificacion\src\main\java\notificacionesDecorator\NotificacionBase.java

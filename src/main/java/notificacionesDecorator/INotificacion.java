@@ -8,10 +8,14 @@ import dominio.Mensaje;
 
 
 /**
- *
- * @author Jarol
+ * Interfaz que contiene el método necesario para poder hacer el envío de una notificación.
+ * @author Equipo Broker.
  */
 public interface INotificacion {
-    //El usuario agregado es el receptor
+    /**
+     * Método encargado de enviar el mensaje al usuario receptor.
+     * @param mensaje Mensaje a enviar.
+     * @return El mensaje enviado.
+     */
     public Mensaje notificar(Mensaje mensaje);
 }

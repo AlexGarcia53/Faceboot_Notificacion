@@ -5,16 +5,28 @@
 package factory;
 
 /**
- *
- * @author Jarol
+ * Clase encargada de construir y devolver instancias de las clases notificadoras.
+ * @author Equipo Broker.
  */
 public class TipoNotificadorFactory {
+    /**
+     * Instancia estática de la clase encarga de notificar mediante SimpleJavaMail.
+     */
     private static SimpleJavaMail simpleJavaMail = null;
+    /**
+     * Instancia estática de la clase encarga de notificar mediante Twilio.
+     */
     private static TwilioSms twilio = null;
-
+    /**
+     * Método constructor de la clase.
+     */
     public TipoNotificadorFactory() {
     }
-
+    /**
+     * Método utilizado para obtener una instancia del notificador SimpleJavaMail, en caso 
+     * de que no este inicializada la inicializa.
+     * @return Instancia del notificador.
+     */
     public static INotificador crearNotificadorSimpleJavaMail() {
         synchronized (TipoNotificadorFactory.class) {
             if (simpleJavaMail == null) {
@@ -24,7 +36,11 @@ public class TipoNotificadorFactory {
         }
         return simpleJavaMail;
     }
-
+    /**
+     * Método utilizado para obtener una instancia del notificador Twilio, en caso 
+     * de que no este inicializada la inicializa.
+     * @return Instancia del notificador.
+     */
     public static INotificador crearNotificadorTwilio() {
         synchronized (TipoNotificadorFactory.class) {
             if (twilio == null) {

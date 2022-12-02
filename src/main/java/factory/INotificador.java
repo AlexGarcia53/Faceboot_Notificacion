@@ -8,11 +8,15 @@ import dominio.Mensaje;
 import dominio.Usuario;
 
 /**
- *
- * @author Jarol
+ * Interfaz que contiene el método necesario para que los notificadores puedan llevar a cabo
+ * la operación.
+ * @author Equipo Broker.
  */
 public interface INotificador {
-    
+    /**
+     * Método encargado de notificar un mensaje mediante el tipo dado.
+     * @param mensaje Mensaje a enviar mediante la notificación
+     */
     public void notificar(Mensaje mensaje);
     
 }

@@ -14,17 +14,28 @@ import org.simplejavamail.mailer.MailerBuilder;
 
 
 /**
- *
- * @author Jarol
+ * Clase encargada del envío de notificaciones vía Email utilizando SimpleJavaMail.
+ * @author Equipo Broker.
  */
 public class SimpleJavaMail implements INotificador {
+    /**
+     * Atributo que contiene el correo desde el que se enviará la notificación.
+     */
     public String correo = "faceboot23a@gmail.com";
+    /**
+     * Atributo que contiene la contraseña del correo desde el que se enviará la notificación.
+     */
     public String contrasena = "keziysbkwqhfxpzl";
-
+    /**
+     * Método constructor de la clase.
+     */
     public SimpleJavaMail() {
 
     }
-
+    /**
+     * Método encargado de notificar un mensaje mediante el tipo dado.
+     * @param mensaje Mensaje a enviar mediante la notificación
+     */
     @Override
     public void notificar(Mensaje mensaje) {
 
