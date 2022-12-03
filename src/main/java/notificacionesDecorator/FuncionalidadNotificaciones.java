@@ -24,7 +24,7 @@ public class FuncionalidadNotificaciones implements INotificaciones{
     /**
      * Atributo que representa a la notificación base.
      */
-    private INotificacion notificacionNormal;
+    private final INotificacion notificacionNormal;
     /**
      * Método constructor de la clase.
      */

@@ -21,11 +21,11 @@ public class SimpleJavaMail implements INotificador {
     /**
      * Atributo que contiene el correo desde el que se enviará la notificación.
      */
-    public String correo = "faceboot23a@gmail.com";
+    private static final String CORREO = "faceboot23a@gmail.com";
     /**
      * Atributo que contiene la contraseña del correo desde el que se enviará la notificación.
      */
-    public String contrasena = "keziysbkwqhfxpzl";
+    private static final String CONTRASENIA = "keziysbkwqhfxpzl";
     /**
      * Método constructor de la clase.
      */
@@ -40,7 +40,7 @@ public class SimpleJavaMail implements INotificador {
     public void notificar(Mensaje mensaje) {
 
         Email email = EmailBuilder.startingBlank()
-                .from(mensaje.getUsuario().getUsuario(), correo)
+                .from(mensaje.getUsuario().getUsuario(), CORREO)
                 .to(mensaje.getReceptor().getUsuario(), mensaje.getReceptor().getEmail())
                 .withSubject("Notificación de " + mensaje.getUsuario().getUsuario())
                 .withPlainText(mensaje.getTextoPlano())
@@ -50,7 +50,7 @@ public class SimpleJavaMail implements INotificador {
         MailerBuilder
                 // facebootA28L./
                 //  keziysbkwqhfxpzl
-                .withSMTPServer("smtp.gmail.com", 587, correo, contrasena).withTransportStrategy(TransportStrategy.SMTP_TLS)
+                .withSMTPServer("smtp.gmail.com", 587, CORREO, CONTRASENIA).withTransportStrategy(TransportStrategy.SMTP_TLS)
                 .buildMailer()
                 .sendMail(email);
 

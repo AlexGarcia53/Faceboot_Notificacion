@@ -25,7 +25,7 @@ public class TwilioSms implements INotificador  {
     /**
      * Atributo que contiene el número desde el que se enviarán las notificaciones.
      */
-    public String numeroEmisor = "+19378882681";
+    private static final String EMISOR = "+19378882681";
     /**
      * Método constructor de la clase.
      */
@@ -43,7 +43,7 @@ public class TwilioSms implements INotificador  {
                 //Numero de a quien se le envia el mensaje
                 new com.twilio.type.PhoneNumber("+52" + mensaje.getReceptor().getCelular()),
                 // Numero del telefoo que proporciona TwilioSms
-                new com.twilio.type.PhoneNumber(numeroEmisor),
+                new com.twilio.type.PhoneNumber(EMISOR),
                 "Nuevo mensaje desde Faceboot \n"+"Enviado por: " + mensaje.getUsuario().getUsuario() + "   \n" + mensaje.getTextoPlano())
                 .create();
 
